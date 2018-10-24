@@ -1,0 +1,13 @@
+package com.myspace.book_recommender;
+
+import com.myspace.book_recommender.User
+import com.myspace.book_recommender.BookRecommendation
+
+
+rule "Lang"
+    when
+        user: User(nationality == "ITA")
+        bookrec: BookRecommendation(language == "")
+    then
+        bookrec.setLanguage("ITA");
+end
