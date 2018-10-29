@@ -7,15 +7,15 @@ import com.myspace.book_recommender.BookRecommendation
 rule "Lang-ita"
     when
         user: User(nationality == "ITA")
-        bookrec: BookRecommendation(language == "")
+        bookrec: BookRecommendation(language == null)
     then
         bookrec.setLanguage("ITA");
 end
 
 rule "Lang-deu"
     when
-        user: User(nationality == "DEU") or User(nationality == "AUT")
-        bookrec: BookRecommendation(language == "")
+        user: User(nationality == "DEU" || == "AUT")
+        bookrec: BookRecommendation(language == null)
     then
         bookrec.setLanguage("DEU");
 end
